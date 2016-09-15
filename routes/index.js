@@ -5,7 +5,7 @@ const pg = require('../db/knex_config.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    pg('todos').select()
+    pg('post').select()
       .then((rows)=>{
         res.render('index', {items: rows})
     })
