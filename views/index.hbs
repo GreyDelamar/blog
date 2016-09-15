@@ -1,21 +1,20 @@
-<h1>gdfgdgsfg</h1>
+<h1>Blog Friendly</h1>
 
 <ul>
 {{#each items}}
 <li>{{this.Title}}</li>
-<span class='completed'><a href="/api/v1/items/delete/{{this.id}}">X</a></span>
 <p>{{this.content}}</p>
+<span><a href="/api/v1/items/delete/{{this.id}}">Delete</a></span>
 {{/each}}
 </ul>
 <h3> Create a todo item </h3>
 <section>
   <form class='add-item' action='/api/v1/items' method='post'>
     <div>
-      <label for='item-name'> What do you want to do? </label>
-      <input type='text' name='Title' value=''></input>
+      <label for='title'> Title </label>
+      <input type='text' name='Title' id='title' value=''></input>
     </div>
     <div>
-      <label for='item-description'>Tell me more </label>
       <textarea name='content' rows='8' cols= '40'></textarea>
     </div>
     <div>

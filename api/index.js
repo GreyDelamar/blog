@@ -16,6 +16,18 @@ router.post('/v1/items',(req, res, next) => {
   })
 });
 
+router.get('/v1/items/edit/:id', function(req,res){
+  pg('post').where('id', req.params.id).insert(req.body)
+  .then(() =>{
+    res.redirect('/')
+  })
+  .catch((err)=>{
+    console.log('there was an error')
+    next(err)
+  })
+});
+
+
 router.get('/v1/items/delete/:id', (req, res, next) => {
   pg('post').where('id', req.params.id).del()
   .then(()=>{
