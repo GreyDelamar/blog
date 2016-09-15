@@ -6,7 +6,7 @@ const pg = require('../db/knex_config.js');
 
 router.post('/v1/items',(req, res, next) => {
   //console.log(pg)
-  pg('blog').insert(req.body)
+  pg('post').insert(req.body)
   .then(() =>{
     res.redirect('/')
   })
@@ -19,7 +19,7 @@ router.post('/v1/items',(req, res, next) => {
 router.get('/v1/items/delete/:id', (req, res, next) => {
   // console.log("the id is: ", req.params.id);
   // res.json(req.params)
-  pg('blog').where('id', req.params.id).del()
+  pg('post').where('id', req.params.id).del()
   .then((something)=>{
     console.log(something)
   res.redirect('/')
