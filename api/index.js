@@ -17,13 +17,10 @@ router.post('/v1/items',(req, res, next) => {
 });
 
 router.get('/v1/items/delete/:id', (req, res, next) => {
-  // console.log("the id is: ", req.params.id);
-  // res.json(req.params)
   pg('post').where('id', req.params.id).del()
-  .then((something)=>{
-    console.log(something)
-  res.redirect('/')
-})
+  .then(()=>{
+    res.redirect('/')
+  })
   .catch((err) => {
   console.error("error deleting from db");
   next(err);
