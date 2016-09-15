@@ -17,7 +17,7 @@ router.post('/v1/items',(req, res, next) => {
 });
 
 router.get('/v1/items/edit/:id', function(req,res){
-  pg('post').where('id', req.params.id).insert(req.body)
+  pg('post').where('id', req.params.id).update(req.body)
   .then(() =>{
     res.redirect('/')
   })
