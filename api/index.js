@@ -17,7 +17,7 @@ router.post('/v1/items',(req, res, next) => {
 });
 
 router.get('/v1/items/edit/:id',(req, res, next) => {
-  res.render('/edit')
+  res.render('/edit/')
 });
 
 // router.put('/v1/items/edit/:id', function(req,res){
